@@ -17,10 +17,12 @@ import android.view.View;
 import android.content.Intent;
 import android.provider.Settings;
 import android.net.Uri;
+import android.util.Log;
 
 import com.txusballesteros.bubbles.BubbleLayout;
 import com.txusballesteros.bubbles.BubblesManager;
 import com.txusballesteros.bubbles.OnInitializedCallback;
+
 
 public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
 
@@ -159,5 +161,23 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
     reactContext
       .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
       .emit(eventName, params);
+
+      String packageName = reactContext.getPackageName();
+      Intent launchIntent = reactContext.getPackageManager().getLaunchIntentForPackage(packageName);
+      String className = launchIntent.getComponent().getClassName();
+try {
+      Class<?> activityClass = Class.forName(className);
+      Intent intent = new Intent(reactContext, activityClass);
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+      if(eventName == "floating-bubble-press") {
+          reactContext.startActivity(intent);
+      }
   }
+   catch(Exception e) {
+            Log.e("Class not found","");
+            return;
+        }
+  }
+
 }
