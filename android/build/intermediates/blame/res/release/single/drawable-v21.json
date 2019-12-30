@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/abc_dialog_material_background.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/2bb6995acee3e924ac9a2cc61cb3f5a7/res/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/abc_list_divider_material.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/2bb6995acee3e924ac9a2cc61cb3f5a7/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/2bb6995acee3e924ac9a2cc61cb3f5a7/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/19b4eb4fec66af08f0f21a810d619c8c/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/2bb6995acee3e924ac9a2cc61cb3f5a7/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/sid/Desktop/driver-react-native/node_modules/react-native-floating-bubble/android/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/private/var/root/.gradle/caches/transforms-2/files-2.1/2bb6995acee3e924ac9a2cc61cb3f5a7/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]
