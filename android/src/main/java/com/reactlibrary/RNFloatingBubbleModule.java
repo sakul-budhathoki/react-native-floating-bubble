@@ -157,7 +157,15 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
   }
 
   private void sendEvent(String eventName) {
+    try {
       if(eventName == "floating-bubble-press") {
+      String packageName = reactContext.getPackageName();
+      Intent launchIntent = reactContext.getPackageManager().getLaunchIntentForPackage(packageName);
+      String className = launchIntent.getComponent().getClassName();
+
+      Class<?> activityClass = Class.forName(className);
+      Intent intent = new Intent(reactContext, activityClass);
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
           reactContext.startActivity(intent);
       }
     WritableMap params = Arguments.createMap();
@@ -165,13 +173,7 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
       .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
       .emit(eventName, params);
 
-      String packageName = reactContext.getPackageName();
-      Intent launchIntent = reactContext.getPackageManager().getLaunchIntentForPackage(packageName);
-      String className = launchIntent.getComponent().getClassName();
-try {
-      Class<?> activityClass = Class.forName(className);
-      Intent intent = new Intent(reactContext, activityClass);
-      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+  
 
   }
    catch(Exception e) {
