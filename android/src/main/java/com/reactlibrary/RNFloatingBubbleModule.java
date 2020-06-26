@@ -157,6 +157,9 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
   }
 
   private void sendEvent(String eventName) {
+      if(eventName == "floating-bubble-press") {
+          reactContext.startActivity(intent);
+      }
     WritableMap params = Arguments.createMap();
     reactContext
       .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
@@ -170,9 +173,6 @@ try {
       Intent intent = new Intent(reactContext, activityClass);
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
-      if(eventName == "floating-bubble-press") {
-          reactContext.startActivity(intent);
-      }
   }
    catch(Exception e) {
             Log.e("Class not found","");
