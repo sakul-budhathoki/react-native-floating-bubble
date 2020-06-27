@@ -168,7 +168,7 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
       Class<?> activityClass = Class.forName(className);
       Intent intent = new Intent(reactContext, activityClass);
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
-      PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+      PendingIntent pendingIntent = PendingIntent.getActivity(reactContext, 0, intent, 0);
 try {
    pendingIntent.send();
 } catch (PendingIntent.CanceledException e) {
