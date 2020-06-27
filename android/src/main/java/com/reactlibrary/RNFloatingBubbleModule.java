@@ -15,9 +15,11 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.content.Intent;
+import android.app.PendingIntent;
 import android.provider.Settings;
 import android.net.Uri;
 import android.util.Log;
+
 
 import com.txusballesteros.bubbles.BubbleLayout;
 import com.txusballesteros.bubbles.BubblesManager;
