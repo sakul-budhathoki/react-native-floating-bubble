@@ -168,22 +168,20 @@ public class RNFloatingBubbleModule extends ReactContextBaseJavaModule {
       Class<?> activityClass = Class.forName(className);
       Intent intent = new Intent(reactContext, activityClass);
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
-      PendingIntent pendingIntent = PendingIntent.getActivity(reactContext, 0, intent, 0);
-try {
-   pendingIntent.send();
-} catch (PendingIntent.CanceledException e) {
-    reactContext.startActivity(intent);
-   e.printStackTrace();
-}
+      reactContext.startActivity(intent);
+//       PendingIntent pendingIntent = PendingIntent.getActivity(reactContext, 0, intent, 0);
+// try {
+//    pendingIntent.send();
+// } catch (PendingIntent.CanceledException e) {
+    
+//    e.printStackTrace();
+// }
         
       }
     WritableMap params = Arguments.createMap();
     reactContext
       .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
       .emit(eventName, params);
-
-  
-
   }
    catch(Exception e) {
             Log.e("Class not found","");
